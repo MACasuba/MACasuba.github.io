@@ -115,7 +115,7 @@ App.onLaunch = function(options) {
       }
     }
 
-    httpRequest.open('GET', 'http://n-hout.nl/data/storage/attachments/client/api/videos.json');
+    httpRequest.open('GET', 'https://macasuba.github.io/client/api/videos.json');
     //httpRequest.open('GET', 'a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/assets/entries.json');   
     httpRequest.send();
   }

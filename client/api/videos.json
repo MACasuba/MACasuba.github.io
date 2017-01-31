@@ -14,7 +14,7 @@
               "type" : "video",
               "id" : "B813A62B-F910-4C86-B2B4-51C7FCB73314",
               "timeOfDay" : "night",
-              "cover" : "http://n-hout.nl/data/storage/attachments/client/aerial.png"
+              "cover" : "https://macasuba.github.io/client/aerial.png"
            },
            {
               "url" : "http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/comp_C002_C005_0818SC_001_v01_6M_HB_tag0.mov",
@@ -22,7 +22,7 @@
               "type" : "video",
               "id" : "9CCB8297-E9F5-4699-AE1F-890CFBD5E29C",
               "timeOfDay" : "day",
-							"cover":"http://n-hout.nl/data/storage/attachments/client/test.png"
+							"cover":"https://macasuba.github.io/client/client/test.png"
 					 },
            {
               "url" : "http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/comp_GL_G010_C006_v08_6Mbps.mov",

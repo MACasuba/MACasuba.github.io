@@ -16,20 +16,6 @@ App.onLaunch = function(options) {
     return parser.parseFromString(xml, "application/xml");
   }
 
-  // A quick utility for displaying a loading page
-  function displayLoading() {
-    var loading = `<?xml version="1.0" encoding="UTF-8" ?>
-    <document>
-     <loadingTemplate>
-        <activityIndicator>
-           <title>Loading aerials...</title>
-        </activityIndicator>
-     </loadingTemplate>
-    </document>`;
-
-    navigationDocument.pushDocument(parse(loading));
-  }
-
   // Display video media in full-screen
   function displayVideo(event) {
     var url = event.target.getAttribute("video", url);
@@ -48,18 +34,24 @@ App.onLaunch = function(options) {
   function refreshCatalog() {
   //start XML header
       var catalog = '<?xml version="1.0" encoding="UTF-8" ?><document><catalogTemplate><banner><title>Aerial listing</title></banner><list>';
+      
    for (topic in data)
        {
  				//add section day to xml 
-   			if (data["day"]) {                
-//count the number of day vids
-   var countday = 0;
-   for (var day = 0; day < data[topic][1]["assets"].length; day++)
-				{
-				if (data[topic][1]["assets"][day].timeOfDay == "day")   
-				countday++;
-				}
-//				console.log('aatal day:  ' + day + ' : ' + countday);       
+   			if (data["day"]) { 
+
+  //count the number of day vids
+  			var countday = 0;
+  //12 arrays in the JSON, cunt all day's
+			  for (var yy = 0; yy < 12; yy++)
+  	  			{
+    	 			for (var day = 0; day < data[topic][yy]["assets"].length; day++)
+  							{
+  							if (data[topic][yy]["assets"][day].timeOfDay == "day")   
+  							countday++;
+  							} 			
+   				 }             
+
 catalog += `<section>
 <listItemLockup>
 <title>day</title>
@@ -67,72 +59,100 @@ catalog += `<section>
 <relatedContent>
 <grid>
 <section>`;
-                 for (i = 0; i < data[topic][1]["assets"].length; i++)
+
+//add the other arrays also
+//there are 12 array's (xx)
+					  for (var xx = 0; xx < 12; xx++)
+								{
+
+
+
+
+                 for (i = 0; i < data[topic][xx]["assets"].length; i++)
                      {
 //only add the day videos to the XML section
-                            if (data[topic][1]["assets"][i].timeOfDay == "day")   {
+                            if (data[topic][xx]["assets"][i].timeOfDay == "day")   {
                                 //console.log('has video, create day lockup');
-                                catalog += `<lockup video="${data[topic][1]["assets"][i].url}">
-                                <img src="https://macasuba.github.io/client/${data[topic][1]["assets"][i].id}.jpg" width="550" height="275" />
-                                <title>${data[topic][1]["assets"][i].accessibilityLabel}</title>
+                                catalog += `<lockup video="${data[topic][xx]["assets"][i].url}">
+                                <img src="https://macasuba.github.io/client/${data[topic][xx]["assets"][i].id}.jpg" width="550" height="275" />
+                                <title>${data[topic][xx]["assets"][i].accessibilityLabel}</title>
                                 </lockup>`;
                             }//einde if 
                         }//einde for
-                  }//einde if day
-                  catalog += `</section>
-                  </grid>
-                  </relatedContent>
-                  </listItemLockup>
-                  <listItemLockup>
-                  <title>night</title>`;
+                        
+                    }//einde xx    
+                        
+                }//einde if day
+                  
+                  
+catalog += `</section>
+</grid>
+</relatedContent>
+</listItemLockup>
+<listItemLockup>
+<title>night</title>`;
     }
+
+
      for (topic in data)
        {
         //add night to catalog
         if (data["night"]) {
-				//count videos with night scene
-var countnight = 0;
-for (var night = 0; night < data[topic][1]["assets"].length; night++)
-				{
-				if (data[topic][1]["assets"][night].timeOfDay == "night")   
-				countnight++;
-				}
+//count videos with night scene
+				var countnight = 0;
+				for (var vv = 0; vv < 12; vv++)
+						{
+						for (var night = 0; night < data[topic][vv]["assets"].length; night++)
+								{
+								if (data[topic][vv]["assets"][night].timeOfDay == "night")   
+								countnight++;
+								}
+						}
+			
 //build the XML between the two data topics day and night
 catalog += `<decorationLabel>${countnight}</decorationLabel>
 <relatedContent>
 <grid>
 <section>`;
+
+//add the other arrays also
+//there are 12 array's (xx)
+// data[topic][xx]["assets"][0].id);
+					  for (var ww = 0; ww < 12; ww++)
+								{
+
+
 //only count the night vids
-                 for (j = 0; j < data[topic][1]["assets"].length; j++)                 
+                 for (j = 0; j < data[topic][ww]["assets"].length; j++)                 
                      {
-                            if (data[topic][1]["assets"][j].timeOfDay == "night")   {
-                                catalog += `<lockup video="${data[topic][1]["assets"][j].url}">
-                                <img src="https://macasuba.github.io/client/${data[topic][1]["assets"][j].id}.jpg" width="550" height="275" />
-                                <title>${data[topic][1]["assets"][j].accessibilityLabel}</title>
+                            if (data[topic][ww]["assets"][j].timeOfDay == "night")   {
+                                catalog += `<lockup video="${data[topic][ww]["assets"][j].url}">
+                                <img src="https://macasuba.github.io/client/${data[topic][ww]["assets"][j].id}.jpg" width="550" height="275" />
+                                <title>${data[topic][ww]["assets"][j].accessibilityLabel}</title>
                                 </lockup>`;
                             }//einde if 
                         }//einde for
+                }//einde ww
         }//einde night
                 
 //close XML
-                  catalog += `</section>
-                  </grid>
-                  </relatedContent>
-                  </listItemLockup>
-                  </section>`;
-       }//einde for
+catalog += `</section>
+</grid>
+</relatedContent>
+</listItemLockup>
+</section>`;
+       	}//einde for
 
 //afsluiten catalog
-      catalog += `</list>
-      </catalogTemplate>
-      </document>`;
+catalog += `</list>
+</catalogTemplate>
+</document>`;
 
       var catalogDoc = parse(catalog);
       catalogDoc.addEventListener("select", displayVideo);
       navigationDocument.pushDocument(catalogDoc);
     
-
-}//einde function
+}//end function
 
 
   // Fetch data from an API / server
@@ -147,7 +167,6 @@ catalog += `<decorationLabel>${countnight}</decorationLabel>
           console.log('--fetching length assets 1 : ' + data[topic][1]["assets"].length);//geeft 17 vids
           console.log('--fetching length assets 0 : ' + data[topic][0]["assets"].length);//geeft 4 vids
           console.log('--fetching length id all   : ' + data[topic][0]["id"].length);//geeft 36 carracters van het id nr   
-          console.log('--fetching length id all   : ' + data[topic][1]["assets"][0].id);   
           
           refreshCatalog();
         }
@@ -157,8 +176,6 @@ catalog += `<decorationLabel>${countnight}</decorationLabel>
     httpRequest.send();
   }
 
-  // Commented out for demo, but useful to use for error messages and loading statuses
-  //displayLoading();
 
   // Loop through the topics and fetch the results from the API
   for (topic in data) {

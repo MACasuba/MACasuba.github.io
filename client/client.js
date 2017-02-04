@@ -10,15 +10,6 @@ App.onLaunch = function(options) {
     "night"    : null,
   };
 
-
-  
-////////
-	//contentURL:"http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/comp_LA_A006_C008_t9_6M_HB_tag0.mov",
-      
-
-
-/////////////////
-
   // Take an XML string and turn it into a parse into a proper DOM
   function parse(xml) {
     var parser = new DOMParser();
@@ -82,7 +73,7 @@ catalog += `<section>
                             if (data[topic][1]["assets"][i].timeOfDay == "day")   {
                                 //console.log('has video, create day lockup');
                                 catalog += `<lockup video="${data[topic][1]["assets"][i].url}">
-                                <img src="${data[topic][1]["assets"][i].cover}" width="550" height="275" />
+                                <img src="https://macasuba.github.io/client/${data[topic][1]["assets"][i].id}.jpg" width="550" height="275" />
                                 <title>${data[topic][1]["assets"][i].accessibilityLabel}</title>
                                 </lockup>`;
                             }//einde if 
@@ -112,16 +103,17 @@ catalog += `<decorationLabel>${countnight}</decorationLabel>
 <grid>
 <section>`;
 //only count the night vids
-                 for (j = 0; j < data[topic][1]["assets"].length; j++)
+                 for (j = 0; j < data[topic][1]["assets"].length; j++)                 
                      {
                             if (data[topic][1]["assets"][j].timeOfDay == "night")   {
                                 catalog += `<lockup video="${data[topic][1]["assets"][j].url}">
-                                <img src="${data[topic][1]["assets"][j].cover}" width="550" height="275" />
+                                <img src="https://macasuba.github.io/client/${data[topic][1]["assets"][j].id}.jpg" width="550" height="275" />
                                 <title>${data[topic][1]["assets"][j].accessibilityLabel}</title>
                                 </lockup>`;
                             }//einde if 
                         }//einde for
         }//einde night
+                
 //close XML
                   catalog += `</section>
                   </grid>
@@ -155,6 +147,7 @@ catalog += `<decorationLabel>${countnight}</decorationLabel>
           console.log('--fetching length assets 1 : ' + data[topic][1]["assets"].length);//geeft 17 vids
           console.log('--fetching length assets 0 : ' + data[topic][0]["assets"].length);//geeft 4 vids
           console.log('--fetching length id all   : ' + data[topic][0]["id"].length);//geeft 36 carracters van het id nr   
+          console.log('--fetching length id all   : ' + data[topic][1]["assets"][0].id);   
           
           refreshCatalog();
         }
@@ -165,7 +158,7 @@ catalog += `<decorationLabel>${countnight}</decorationLabel>
   }
 
   // Commented out for demo, but useful to use for error messages and loading statuses
-  displayLoading();
+  //displayLoading();
 
   // Loop through the topics and fetch the results from the API
   for (topic in data) {

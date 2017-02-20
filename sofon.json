@@ -21,22 +21,13 @@
 			"y": 1,
 			"width": 1,
 			"height": 1,
-			"title": "Utrecht",
+			"title": "Son",
 			"refreshrate": 10,
 			"data": {
 			},
 			"type": "clock"
-		}, {
-			"x": 6,
-			"y": 2,
-			"width": 1,
-			"height": 1,
-			"title": "\u0425\u0430\u0440\u043a\u0456\u0432",
-			"data": {
-				"offset": -3600
-			},
-			"type": "clock"
-		}, {
+		}, "logo": "https:\/\/macasuba.github.io\/logo-sofon-guided-solutions.png",
+		 {
 			"x": 6,
 			"y": 3,
 			"width": 1,

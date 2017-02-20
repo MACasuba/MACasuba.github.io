@@ -18,6 +18,17 @@
 			"datasource": ""
 		}, {
 			"x": 6,
+			"y": 1,
+			"width": 1,
+			"height": 1,
+			"title": "Son",
+			"refreshrate": 10,
+			"data": {
+			},
+			"type": "logo",
+			"datasource": "https:\/\/macasuba.github.io\/logo-sofon-guided-solutions.png"
+		},{
+			"x": 6,
 			"y": 3,
 			"width": 1,
 			"height": 1,
@@ -98,7 +109,7 @@
 				"yaxis": [18, 7, 14, 10, 10]
 			},
 			"type": "piechart",
-			"datasource": "https:\/\/a-p-i.nl\/notfound.tv\/bars.php?view=1"
+			"datasource": "https:\/\/a-p-i.nl\/notfound.tv\/bars.php?view=2"
 		}]
 	}]
 }

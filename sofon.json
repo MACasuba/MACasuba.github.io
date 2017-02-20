@@ -7,18 +7,18 @@
 			"y": 3,
 			"width": 2, 
 			"height": 3, 
-			"title": "Ticket status", 
-			"refreshrate": 10, 
+			"title": "Ticket status Today", 
+			"refreshrate": 40, 
 			"data": {
 				"xaxis": ["Resolved", "In progress", "On hold"],
-				"yaxis": [9, 11, 17]
+				"yaxis": [2, 22, 17]
 			},
 			"type": "piechart",
 
 			"datasource": ""
 		}, {
 			"x": 6,
-			"y": 1,
+			"y": 3,
 			"width": 1,
 			"height": 1,
 			"title": "Son",
@@ -41,10 +41,8 @@
 			"width": 6,
 			"height": 1,
 			"title": "Latest Sofon News",
-			"refreshrate": 20,
+			"refreshrate": 6,
 			"data": {
-				"xaxis": ["Resolved", "In progress", "On hold"],
-				"yaxis": [9, 11, 17]
 			},
 			"type": "text",
 			"datasource": "https:\/\/macasuba.github.io\/text.php?view=3"

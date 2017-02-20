@@ -36,7 +36,9 @@
 				"offset": -3600
 			},
 			"type": "clock"
-		}, {
+		}, 
+		"logo": "https:\/\/macasuba.github.io\/logo-sofon-guided-solutions.png", 
+			 {
 			"x": 1,
 			"y": 6,
 			"width": 6,

@@ -45,7 +45,7 @@
 			"data": {
 			},
 			"type": "text",
-			"datasource": "https:\/\/macasuba.github.io\/text.php?view=3"
+			"datasource": "https:\/\/macasuba.github.io\/text.php?view=1"
 		}, {
 			"x": 1,
 			"y": 1,

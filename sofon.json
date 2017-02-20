@@ -26,13 +26,12 @@
 			"data": {
 			},
 			"type": "clock"
-		}, 
-		 {
+		}, {
 			"x": 6,
-			"y": 3,
+			"y": 2,
 			"width": 1,
 			"height": 1,
-			"title": "London",
+			"title": "Oberhausen",
 			"data": {
 				"offset": -3600
 			},
@@ -49,7 +48,7 @@
 				"yaxis": [9, 11, 17]
 			},
 			"type": "text",
-			"datasource": "https:\/\/a-p-i.nl\/notfound.tv\/text.php?view=3"
+			"datasource": "https:\/\/macasuba.github.io\/text.php?view=3"
 		}, {
 			"x": 1,
 			"y": 1,
@@ -80,7 +79,7 @@
 			"title": "Queue",
 			"refreshrate": 20,
 			"type": "text",
-			"data": "https:\/\/a-p-i.nl\/notfound.tv\/text.php?view=1"
+			"datasource": "https:\/\/a-p-i.nl\/notfound.tv\/text.php?view=1"
 		}, {
 			"x": 2,
 			"y": 2,

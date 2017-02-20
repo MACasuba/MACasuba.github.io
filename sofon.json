@@ -33,7 +33,6 @@
 			"height": 1,
 			"title": "Oberhausen",
 			"data": {
-				"offset": -3600
 			},
 			"type": "clock"
 		}, {
@@ -95,12 +94,12 @@
 			"width": 3,
 			"height": 5,
 			"title": "Resolved tickets last week",
-			"refreshrate": 60,
+			"refreshrate": 10,
 			"data": {
 				"xaxis": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
 				"yaxis": [18, 7, 14, 10, 10]
 			},
-			"type": "barchart",
+			"type": "piechart",
 			"datasource": "https:\/\/a-p-i.nl\/notfound.tv\/bars.php?view=1"
 		}]
 	}]

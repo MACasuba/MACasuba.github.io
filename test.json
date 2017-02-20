@@ -36,6 +36,16 @@
 			},
 			"type": "clock"
 		}, {
+			"x": 6,
+			"y": 3,
+			"width": 1,
+			"height": 1,
+			"title": "Sofon",
+			"refreshrate": 10,
+			"data": {
+			},
+			"logo": "https:\/\/macasuba.github.io\/logo-sofon-guided-solutions.png"
+		}, {
 			"x": 1,
 			"y": 6,
 			"width": 6,
@@ -47,7 +57,7 @@
 				"yaxis": [9, 11, 17]
 			},
 			"type": "text",
-			"datasource": "https:\/\/macasuba.github.io\/text.php?view=3"
+			"datasource": "https:\/\/macasuba.github.io\/text.php"
 		}, {
 			"x": 1,
 			"y": 1,

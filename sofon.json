@@ -1,19 +1,19 @@
 {
-	"logo": "https:\/\/notfound.nl\/maillogo.png", // Not currently used
-	"screens": [{ // Currently only the first screen will show
-		"duration": 60, // Not currently used
+	"logo": "https:\/\/macasuba.github.io\/logo-sofon-guided-solutions.png",
+	"screens": [{ 
+		"duration": 60, 
 		"data": [{
-			"x": 1, // Horizontal position on the grid (1-6)
-			"y": 3, // Vertical position on the grid (1-6)
-			"width": 2, // Width on the grid (1-6)
-			"height": 3, // Height on the grid (1-6)
-			"title": "Ticket status", // Title on the block
-			"refreshrate": 10, // Refresh rate in seconds
+			"x": 1, 
+			"y": 3,
+			"width": 2, 
+			"height": 3, 
+			"title": "Ticket status", 
+			"refreshrate": 10, 
 			"data": {
 				"xaxis": ["Resolved", "In progress", "On hold"],
 				"yaxis": [9, 11, 17]
 			},
-			"type": "piechart", // Type (can be: text/clock/piechart/barchart)
+			"type": "piechart",
 
 			"datasource": ""
 		}, {
